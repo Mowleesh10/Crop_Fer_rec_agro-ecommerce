@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Top Recommended crops :- 
+{% endblock %}
+
+{% block body %}
+
+    <center>
+
+        <h1>Top Recommended crops :- </h1><br><br>
+        <h2>{% for i in trec %}
+                {{i}}</br>
+            {%endfor%}</h2>
+        <br><br>
+        <!--<h1>Recommended crops on each models :- </h1><br><br>
+        <h2>Decision Tree : </h2><h3>crop : {{ rcdt }} </h3><br><br>
+        <h2>KNN : </h2><h3>crop : {{ rckn }} </h3><br><br>
+        <h2>Random Forest : </h2><h3>crop : {{ rcrf }} </h3><br><br>   
+        <h2>Support Vector Machine : </h2><h3>crop : {{ rcsvm }} </h3><br><br>
+        <h2>Logestic Regression : </h2><h3>crop : {{ rclr }} </h3><br><br>
+        <h2>Naive Bayes : </h2><h3>crop : {{ rcnb }} </h3><br><br>-->
+        <br><br>
+    <a href='/'>go back to home page</a>
+
+    </center>
+
+{% endblock %}
+
+
+
+
+
+

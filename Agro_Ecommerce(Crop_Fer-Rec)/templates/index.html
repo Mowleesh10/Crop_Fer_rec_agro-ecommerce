@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block body %} 
+	<div class="container" id="topdiv6">
+		<nav class="navbar navbar-light bg-light">
+			<span class="navbar-brand mb-0 h1">Products</span>
+			<a class="my-2 my-sm-0" href="{{url_for('signup')}}">Are you a Merchant?</a>
+		</nav>
+		{% if rows %}
+				<div class="row" id="index0">
+					{% for row in rows %}
+						<div class="card needspace" style="width: 18rem;">
+							<img src="{{ url_for('static_dir', path = 'images/'+row.filename) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+			    				<h5 class="card-title">{{row.name}}</h5>
+			    				<p class="card-text">{{row.category}}</p>
+			  				</div>
+			  				<ul class="list-group list-group-flush">
+			  					<li class="list-group-item">{{row.description}}</li>
+			    				<li class="list-group-item">Price Range: {{row.price_range}}</li>
+			    				<li class="list-group-item">
+									<input id="{{row.contact}}" value="{{row.contact}}" readonly maxlength="10" size="8" hidden ></br>
+									Contact To Purchase : (WhatsApp)</br>
+									<i style="font-size:30px" class="fa">&#xf232;</i>
+									<a href = "" onclick = "this.href='https://wa.me/91' + document.getElementById('{{row.contact}}').value + '?text=I%20am%20interested%20in%20your%20product'" target=_blank>Click Here...</a>
+								<li class="list-group-item">Location: {{row.address}}</li>
+			  				</ul>
+						</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+	</div>
+{% endblock %}

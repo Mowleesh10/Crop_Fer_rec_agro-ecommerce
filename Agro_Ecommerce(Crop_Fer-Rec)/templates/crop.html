@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+   <head>
+        <style>
+            input[type=text] {
+  width: 25%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+            .button {
+  background-color:#5c8a8a;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  align: center;
+}
+body{
+
+}
+
+        </style>
+    </head>
+    <body>
+        <center>
+            <div>
+            <form method="POST", action="{{url_for('crop_rec')}}">
+            <input type="text", name='cra', placeholder="Nitrogen"> <br><br>
+            <input type="text", name='crb', placeholder="Phosphorous"> <br><br>
+             <input type="text", name='crc', placeholder="Potassium"> <br><br>
+            <input type="text", name='crd', placeholder="Temperature"> <br><br>
+            <input type="text", name='cre', placeholder="Humidity"> <br><br>
+            <input type="text", name='crf', placeholder="ph"> <br><br>
+            <input type="text", name='crg', placeholder="Rainfall"> <br><br><br>
+            <input type="submit" ,  value='RECOMMEND' class="button">
+        </form>
+
+         </div>
+    </center>
+
+    </body>
+{% endblock %}
